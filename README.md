@@ -17,5 +17,5 @@ There's a bug in webpack that allows unhandled promise rejections to cause the b
     * This time, without the breaking plugin, the build completes properly
 
 ## Bug/request:
-    * When webpack runs into an `UnhandledPromiseRejectionWarning`, it should exit the node process with a non-zero code
-    * This will allow automated ci/cd scripts to stop once the webpack process fails.
+* When webpack runs into an `UnhandledPromiseRejectionWarning`, it should exit the node process with a non-zero code
+* This will allow automated ci/cd scripts to stop once the webpack process fails.
