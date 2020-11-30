@@ -1,6 +1,6 @@
-# Reproducing webpack bug
+# Reproducing webpack bug [12086](https://github.com/webpack/webpack/issues/12086)
 
-There's a bug in webpack that allows unhandled promise rejections to cause the build to fail silently. The webpack config file here forces webpack to fail with a custom plugin that rejects a 
+There's a bug in webpack that allows unhandled promise rejections to cause the build to fail silently. The webpack config file here forces webpack to fail with a custom plugin that rejects a promise each time. The node process completes successfully regardless.
 
 
 ## Instructions to run/replicate:
@@ -16,6 +16,6 @@ There's a bug in webpack that allows unhandled promise rejections to cause the b
     * run `npm run build` again
     * This time, without the breaking plugin, the build completes properly
 
-## Bug/request:
+## Expected behavior:
 * When webpack runs into an `UnhandledPromiseRejectionWarning`, it should exit the node process with a non-zero code
 * This will allow automated ci/cd scripts to stop once the webpack process fails.
